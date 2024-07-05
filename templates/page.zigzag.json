@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "zig_zag_NfUeCx": {
+      "type": "zig-zag",
+      "blocks": {
+        "zig_zag_fVwUNc": {
+          "type": "zig-zag",
+          "settings": {
+            "layout": "left",
+            "alignment": "center",
+            "image": "shopify:\/\/shop_images\/beauty-products-recipients-assortment-grey-stones.jpg",
+            "heading": "What is Lorem Ipsum?",
+            "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            "button-text": "Learn More",
+            "link": "shopify:\/\/collections"
+          }
+        },
+        "zig_zag_zWkRW8": {
+          "type": "zig-zag",
+          "settings": {
+            "layout": "right",
+            "alignment": "center",
+            "image": "shopify:\/\/shop_images\/3d-rendering-personal-care-products-fondant-pink.jpg",
+            "heading": "Why do we use it?",
+            "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+            "button-text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "zig_zag_fVwUNc",
+        "zig_zag_zWkRW8"
+      ],
+      "settings": {
+        "heading": ""
+      }
+    },
+    "code_display_7QtHbK": {
+      "type": "code-display",
+      "settings": {
+        "html-code": "",
+        "css-code": "",
+        "js-code": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "zig_zag_NfUeCx",
+    "code_display_7QtHbK"
+  ]
+}

@@ -1,0 +1,142 @@
+
+
+<div class="feature-logo-slider py-60" style="background-color: {{section.settings.color-logo}};">
+    <div class="container_fluid smscreen2:px-0">
+      {% if section.settings.heading != blank %}
+        <div class="section-title pb-20"><h2 class="h2 heading_block !text-center">{{ section.settings.heading }}</h2></div>  	
+      {% endif %}
+      <div class="logo-slider swiper xlscreen2:!pb-35">
+        <div class="slidercontent_wapper swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <div class="slider-content_wapimages swiper-slide">
+                <div class="slide_img">
+                    <a href="{{ block.settings.logo_link }}">
+                     <img class="object-contain" src="{{ block.settings.image | img_url: 'grande'  }}" alt="{{ block.settings.image.alt }}" width="250" height="47" loading="lazy">
+                  </a>
+                  </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div> 
+    </div>
+  </div>
+  <script>
+    var mySwiper = new Swiper(".logo-slider", {
+    slidesPerView: 5,
+    spaceBetween:109,
+    loop: false,
+    centeredSlides: false,
+    centeredSlidesBounds: false,
+    speed: 1000,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    breakpoints: {
+      1440: {
+        slidesPerView: 5,
+        spaceBetween: 109,
+        loop: false,
+        centeredSlides: false,
+        centeredSlidesBounds: false,
+      },
+      1280: {
+        slidesPerView: 5,
+        spaceBetween: 80,
+        loop: false,
+        centeredSlides: false,
+        centeredSlidesBounds: false,
+      },
+      1024: {
+        slidesPerView: 3.5,
+        spaceBetween: 70,
+        loop: true,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+      },
+      768: {
+        slidesPerView: 4.5,
+        spaceBetween: 60,
+        loop: true,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+      },
+      576: {
+        slidesPerView: 3.8,
+        spaceBetween: 60,
+        loop: true,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+      },
+      414: {
+        slidesPerView: 2.5,
+        spaceBetween:60,
+        loop: true,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+      },
+      0: {
+        slidesPerView: 2.5,
+        spaceBetween: 60,
+        loop: true,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+      },
+    },
+  }); 
+  </script>
+  
+  {% schema %}
+    {
+      "name": "Logo Slider",
+      "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default":"Heading",
+            "label":"Heading"
+          },
+          {
+            "type": "color",
+            "id": "color-logo",
+            "label":"Background Color"
+        }
+      ],
+      "blocks": [
+          {
+            "type": "image_block",
+            "name": "Image Block",
+            "settings": [
+                {
+                  "type": "image_picker",
+                  "id": "image",
+                  "label":"Image"
+                },
+                {
+                  "type":"url",
+                  "id":"logo_link",
+                  "label":"Link"
+                }
+            ]
+          }
+        ],
+       "presets": [
+         {
+             "category": "page",
+             "name": "Logo Slider"
+         }
+       ]
+    }
+  {% endschema %}
+  
+  {% javascript %}
+   
+  {% endjavascript %}
+  

@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "feature_logo_zGwef7": {
+      "type": "feature-logo",
+      "blocks": {
+        "image_block_cLWRkd": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/meta-logo-removebg-preview.png",
+            "logo_link": ""
+          }
+        },
+        "image_block_jrT9zP": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/518705.png",
+            "logo_link": ""
+          }
+        },
+        "image_block_igiMdg": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/chanel-logo.png",
+            "logo_link": ""
+          }
+        },
+        "image_block_GVnNiM": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/100-logo-removebg-preview.png",
+            "logo_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_block_cLWRkd",
+        "image_block_jrT9zP",
+        "image_block_igiMdg",
+        "image_block_GVnNiM"
+      ],
+      "settings": {
+        "heading": "Heading",
+        "color-logo": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "feature_logo_zGwef7"
+  ]
+}

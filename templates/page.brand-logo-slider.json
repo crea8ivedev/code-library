@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "brand_logo_slider_KaFY7C": {
+      "type": "brand-logo-slider",
+      "blocks": {
+        "logo_BYhKjU": {
+          "type": "logo",
+          "settings": {
+            "logo-image": "shopify:\/\/shop_images\/chanel-logo.png"
+          }
+        },
+        "logo_rbP3W7": {
+          "type": "logo",
+          "settings": {
+            "logo-image": "shopify:\/\/shop_images\/tourism-logo-removebg-preview.png"
+          }
+        },
+        "logo_MNpBhw": {
+          "type": "logo",
+          "settings": {
+            "logo-image": "shopify:\/\/shop_images\/M-logo-removebg-preview.png"
+          }
+        },
+        "logo_3tRUx8": {
+          "type": "logo",
+          "settings": {
+            "logo-image": "shopify:\/\/shop_images\/green-logo-removebg-preview.png"
+          }
+        },
+        "logo_ED7LXi": {
+          "type": "logo",
+          "settings": {
+            "logo-image": "shopify:\/\/shop_images\/meta-logo-removebg-preview.png"
+          }
+        },
+        "logo_Hb6kRH": {
+          "type": "logo",
+          "settings": {
+            "logo-image": "shopify:\/\/shop_images\/100-logo-removebg-preview.png"
+          }
+        },
+        "logo_xd9NrY": {
+          "type": "logo",
+          "settings": {
+            "logo-image": "shopify:\/\/shop_images\/518705.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_BYhKjU",
+        "logo_rbP3W7",
+        "logo_MNpBhw",
+        "logo_3tRUx8",
+        "logo_ED7LXi",
+        "logo_Hb6kRH",
+        "logo_xd9NrY"
+      ],
+      "settings": {
+        "heading": "Brand Logo",
+        "sub-heading": "Logos",
+        "content": "Lorem ipsum dollor lorem ipsum dollor sit",
+        "btn-text": "Read more",
+        "btn-link": "shopify:\/\/collections"
+      }
+    },
+    "code_display_r4eUVP": {
+      "type": "code-display",
+      "settings": {
+        "html-code": "",
+        "css-code": "",
+        "js-code": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "brand_logo_slider_KaFY7C",
+    "code_display_r4eUVP"
+  ]
+}

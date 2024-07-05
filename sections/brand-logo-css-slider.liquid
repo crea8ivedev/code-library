@@ -1,0 +1,231 @@
+<div class="brand-logos">
+  <div class="logo-container">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.sub-heading != blank %}
+      <h3 class="sub-title">{{ section.settings.sub-heading }}</h3>
+    {% endif %}
+    {% if section.settings.content != blank %}
+      <p class="logo-desc">{{ section.settings.content }}</p>
+    {% endif %}
+    <div class="slider">
+  <div class="slide-track">
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+    </div>
+  </div>
+</div>
+    {% if section.settings.btn-text != blank %}
+    <div class="centered-main">
+      <a href="{{ section.settings.btn-link }}" class="centered-link">{{ section.settings.btn-text }}</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .brand-logos {
+    background-color: antiquewhite;
+  }
+.brand-logos .logo-container {
+  overflow-x: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.brand-logos .logo-container h2,
+.brand-logos .logo-container h3,
+.brand-logos .logo-container p {
+  text-align: center;
+}
+
+.brand-logos h2 {
+  font-size: 32px;
+  margin-bottom: 0px;
+}
+
+.brand-logos h3{
+ font-size: 26px;
+ margin: 10px 0;
+}
+  
+.brand-logos p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.brand-logos .centered-main {
+ width: max-content;
+  margin: 0 auto;
+  margin-bottom: 26px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  animation: scroll 10s linear infinite;
+}
+
+.slide-track {
+  width: 100%;
+  display: flex;
+  gap: 3em;
+  overflow: hidden;
+}
+
+.slider {
+  margin-top: 70px;
+  background-color: whitesmoke;
+  padding: 8em 2em;
+}
+
+@keyframes scroll {
+  0% {transform: translateX(0);}
+  100% {transform: translatex(-1000%)}
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script>
+const swiper = new Swiper(".logo-swiper-container", {
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  centeredSlides: true,  // Ensure centeredSlides is true initially
+  loop: true,
+  autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 600px
+    600: {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 5,
+      centeredSlides: true // Center slides on tablets
+    },
+    // when window width is >= 900px
+    900: {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 5,
+      centeredSlides: false
+    },
+    // when window width is >= 1200px
+    1200: {
+      slidesPerView: 5,
+      slidesPerGroup: 1,
+      spaceBetween: 5,
+      centeredSlides: false
+    }
+  }
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Brand logo slider",
+    "settings": [
+		  {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+		  },
+          {
+            "type": "text",
+            "id": "sub-heading",
+            "label": "Sub Heading"
+		  },
+          {
+            "type": "text",
+            "id": "content",
+            "label": "Content"
+		  },
+          {
+            "type": "text",
+            "id": "btn-text",
+            "label": "Button Text"
+		  },
+          {
+            "type": "url",
+            "id": "btn-link",
+            "label": "Button Link"
+		  }
+	],
+	"blocks": [
+      {
+        "type": "logo",
+        "name": "logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo-image",
+            "label": "Logo Image"
+		  }
+        ]
+      }
+	],
+      "presets": [
+        {
+          "name": "Brand Logo CSS Slider"
+        }
+      ]
+  }
+{% endschema %}

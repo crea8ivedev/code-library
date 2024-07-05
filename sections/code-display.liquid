@@ -1,0 +1,117 @@
+<div class="code-card">
+  <div class="html-tab">
+      <div>
+      <h3>HTML</h3>
+      </div>
+      <pre><code class="html-code">{{ page.metafields.custom.html_content | escape }}</code></pre>
+     <div>
+      {% if page.metafields.custom.html_content != blank %}
+        <button onclick="copyToClipboard('.html-code')">Copy HTML Code</button>
+      {% endif %}
+     </div>
+  </div>
+  <div class="css-tab">
+    <div>
+      <h3>CSS</h3>
+    </div>
+    <pre><code class="css-code">{{ page.metafields.custom.css_content | escape }}</code></pre>
+    <div>
+      {% if page.metafields.custom.css_content != blank %}
+        <button onclick="copyToClipboard('.css-code')">Copy CSS Code</button>
+      {% endif %}
+    </div>
+  </div>
+  <div class="js-tab">
+    <div>
+     <h3>JS</h3>
+    </div>
+    {% if page.metafields.custom.js_content!= blank %}
+     <pre><code class="js-code">{{ page.metafields.custom.js_content | escape }}</code></pre>
+      <div>
+       <button onclick="copyToClipboard('.js-code')">Copy JS Code</button>
+      </div>
+    {% else %}
+      <h4>EMPTY !!</h4>
+      {% endif %}
+    
+  </div>
+</div>
+
+<script>
+  function copyToClipboard(className) {
+    var copyTexts = document.querySelectorAll(className);
+    var copied = false;
+
+    copyTexts.forEach(function(copyText) {
+      var textArea = document.createElement("textarea");
+      textArea.value = copyText.textContent;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("Copy");
+      textArea.remove();
+      copied = true;
+    });
+
+    if (copied) {
+      alert('Code copied to clipboard!');
+    }
+  }
+</script>
+        
+<style>
+.code-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 3rem;
+   padding:2%;
+}
+pre{
+  height: 550px;
+  overflow: auto;
+  background-color: #f6f6f6;
+  padding: 5%;
+}
+h4{
+  background-color: #f6f6f6;
+  height: 550px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  color: aliceblue;
+  background-color: #312c2c;
+  padding: 10px;
+  border-radius: 10px;
+}
+</style>
+        
+{% schema %}
+{
+  "name": "Display Code",
+  "settings": [
+    {
+      "type": "html",
+      "id": "html-code",
+      "label": "Liquid Code"
+    },
+    {
+      "type": "textarea",
+      "id": "css-code",
+      "label": "CSS Code"
+    },
+    {
+      "type": "textarea",
+      "id": "js-code",
+      "label": "JS Code"
+    }
+  ],
+      "presets": [
+        {
+          "name": "Display Code"
+        }
+      ]
+}
+{% endschema %}
+

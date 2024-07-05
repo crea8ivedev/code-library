@@ -1,0 +1,147 @@
+
+
+{%- style -%}
+
+  .faq_question.active .icon-shape.active svg path.vertical-line {
+      display: none;
+    }
+    .faq_question.active .icon-shape.active svg path {
+     stroke: #0F0F11;
+    }
+{%- endstyle -%}
+
+<div class="ctm_multifaq_title_main px-20 lg:px-35 desktop:px-60 py-40 {{ section.settings.extra_class }} ">
+    <div class="ctm_multifaq_title_inner">
+        <div class="faq_main_container">
+            {%- for block in section.blocks -%}
+                {%- if block.settings.main_title != blank -%}
+                    <div id="faq_subheading{{ forloop.index0 }}" class="faq_subheading ctm_{{ block.settings.main_title | handle }} pb-10 lg:pb-20">
+                        <h2>{{ block.settings.main_title }}</h2>
+                    </div>
+                {%- endif -%}
+            
+                {% if block.settings.faq_question != blank %}
+                <div class="faq_container faq_container{{ forloop.index0 }}">
+                    <div class="faq_question flex items-center justify-between border-b-2 border-solid border-light_black py-10 pr-[23px] {% if forloop.first and section.settings.first_accordion_open %}open{% endif %}">
+                        <div class="faq_question-text pr-10">
+                            <h5 class="font-normal uppercase mdscreen1:text-18 mdscreen1:leading-26">{{ block.settings.faq_question }}</h5>
+                        </div>
+                        <div class="icon">
+                            <div class="icon-shape">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="vertical-line" d="M20.4853 12.0009H3.51472" stroke="#0F0F11" stroke-width="2.33" stroke-linecap="square" stroke-linejoin="square"></path>
+                                    <path d="M12 3.51562V20.4862" stroke="#0F0F11" stroke-width="2.33" stroke-linecap="square" stroke-linejoin="square"></path>
+                                  </svg>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="answercont max-h-0 overflow-hidden transition-all duration-300 ease-in-out" {% if forloop.first and section.settings.first_accordion_open %}style="display: block;"{% endif %}>
+                        <div class="answer p-20">
+                            {{ block.settings.faq_answer }}
+                        </div>
+                    </div>
+                </div>
+                {%- endif -%}
+            {%- endfor -%}
+        </div> 
+    </div>
+</div>
+
+<style>
+    .faq_question.active .icon-shape.active svg {
+        transform: rotate(-90deg);
+        color:#FF5D5D;
+    }
+</style>
+
+
+{% schema %}
+{
+  "name": "custom FAQ",
+  "tag": "section",
+  "class": "ctm_faqblock_main",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Extra Class",
+      "id": "extra_class"
+    },
+    {
+      "type": "checkbox",
+      "label": "First Accordion Open",
+      "id": "first_accordion_open"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_block",
+      "name": "Faq block",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "html",
+          "label": "Title",
+          "id": "main_title"
+        },
+        {
+          "type": "html",
+          "label": "Faq Question",
+          "id": "faq_question"
+        },
+        {
+          "type": "html",
+          "label": "Faq Answer",
+          "id": "faq_answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "custom FAQ"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+document.querySelectorAll(".ctm_multifaq_title_main").forEach((section) => {
+  let questions = section.querySelectorAll(".faq_question");
+  let previousActiveQuestion = null;
+
+  questions.forEach((question) => {
+      let icon = question.querySelector(".icon-shape");
+
+      question.addEventListener("click", (event) => {
+          if (previousActiveQuestion && previousActiveQuestion !== question) {
+              previousActiveQuestion.classList.remove("active");
+              previousActiveQuestion.querySelector(".icon-shape").classList.remove("active");
+              previousActiveQuestion.nextElementSibling.style.maxHeight = 0;
+          }
+
+          question.classList.toggle("active");
+          icon.classList.toggle("active");
+
+          const answer = question.nextElementSibling;
+
+          if (question.classList.contains("active")) {
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              previousActiveQuestion = question;  // Update the previously active question
+          } else {
+              answer.style.maxHeight = 0;
+              previousActiveQuestion = null;  // No question is active now
+          }
+      });
+
+      // Check if the question has the "open" class and add the "active" class accordingly
+      if (question.classList.contains("open")) {
+          question.classList.add("active");
+          icon.classList.add("active");
+          const answer = question.nextElementSibling;
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          previousActiveQuestion = question;  // Set the initially active question
+      }
+  });
+});
+{% endjavascript %}

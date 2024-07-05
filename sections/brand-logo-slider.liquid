@@ -1,0 +1,254 @@
+<div class="brand-logos">
+  <div class="logo-container">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.sub-heading != blank %}
+      <h3 class="sub-title">{{ section.settings.sub-heading }}</h3>
+    {% endif %}
+    {% if section.settings.content != blank %}
+      <p class="logo-desc">{{ section.settings.content }}</p>
+    {% endif %}
+    <div class="logo-swiper-container">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+            {% if block.settings.logo-image != blank %}
+              <div class="logo-slide swiper-slide">
+                  <img src="{{ block.settings.logo-image | img_url:'master' }}" alt="brand-logo" width="100%" height="100%">
+              </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+      
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    {% if section.settings.btn-text != blank %}
+    <div class="centered-main">
+      <a href="{{ section.settings.btn-link }}" class="centered-link">{{ section.settings.btn-text }}</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .brand-logos {
+    background-color: antiquewhite;
+  }
+.brand-logos .logo-container {
+  overflow-x: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.brand-logos .logo-container h2,
+.brand-logos .logo-container h3,
+.brand-logos .logo-container p {
+  text-align: center;
+}
+
+.brand-logos h2 {
+  font-size: 32px;
+  margin-bottom: 0px;
+}
+
+.brand-logos h3{
+ font-size: 26px;
+ margin: 10px 0;
+}
+  
+.brand-logos p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.brand-logos .centered-main {
+ width: max-content;
+  margin: 0 auto;
+  margin-bottom: 26px;
+}
+
+.brand-logos .centered-link {
+  margin: 0px auto;
+  text-align: center;
+  text-decoration: none;
+  background-color: #363535;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+}
+  
+.brand-logos .logo-swiper-container {
+  overflow: visible;
+  position: relative;
+  width: 100%; /* Ensure the swiper container takes the full width */
+}
+  
+.brand-logos .swiper-slide {
+  transition: all 300ms ease-in-out;
+  border-radius: 5px;
+}
+
+.brand-logos .swiper-slide img {
+  border-radius: 5px;
+  max-width: 120px;
+  cursor: grab;
+  height: 150px;
+  object-fit: contain;
+}
+
+.brand-logos .swiper-slide img:active {
+  cursor: grabbing;
+}
+
+.brand-logos .swiper-button-next,
+.brand-logos .swiper-button-prev {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-60%);
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.brand-logos .swiper-button-prev:after, .brand-logos .swiper-button-next:after {
+  font-size: 20px;
+}
+
+.brand-logos .swiper-button-next {
+  right: 10px;
+}
+
+.brand-logos .swiper-button-prev {
+  left: 10px;
+}
+
+.brand-logos .swiper-wrapper {
+  align-items: center;
+  opacity: 1;
+}
+  
+.brand-logos .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-logos .logo-swiper-container  {
+  margin: 40px 0;
+}
+
+@media screen and (min-width: 600px) {
+  .brand-logos .logo-swiper-container {
+    padding: 0 2rem; 
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .brand-logos .logo-swiper-container {
+    padding: 0 4rem;
+  }
+}
+</style>
+
+
+<script>
+const swiper = new Swiper(".logo-swiper-container", {
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  centeredSlides: true,  // Ensure centeredSlides is true initially
+  loop: true,
+  autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 600px
+    600: {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 5,
+      centeredSlides: true // Center slides on tablets
+    },
+    // when window width is >= 900px
+    900: {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 5,
+      centeredSlides: false
+    },
+    // when window width is >= 1200px
+    1200: {
+      slidesPerView: 5,
+      slidesPerGroup: 1,
+      spaceBetween: 5,
+      centeredSlides: false
+    }
+  }
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Brand logo slider",
+    "settings": [
+		  {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+		  },
+          {
+            "type": "text",
+            "id": "sub-heading",
+            "label": "Sub Heading"
+		  },
+          {
+            "type": "text",
+            "id": "content",
+            "label": "Content"
+		  },
+          {
+            "type": "text",
+            "id": "btn-text",
+            "label": "Button Text"
+		  },
+          {
+            "type": "url",
+            "id": "btn-link",
+            "label": "Button Link"
+		  }
+	],
+	"blocks": [
+      {
+        "type": "logo",
+        "name": "logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo-image",
+            "label": "Logo Image"
+		  }
+        ]
+      }
+	],
+      "presets": [
+        {
+          "name": "Brand Logo Slider"
+        }
+      ]
+  }
+{% endschema %}
