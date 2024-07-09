@@ -1,4 +1,4 @@
-
+{{ 'ctm-faq-with-css.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
 
@@ -10,20 +10,20 @@
     }
 {%- endstyle -%}
 
-<div class="ctm_multifaq_title_main px-20 lg:px-35 desktop:px-60 py-40 {{ section.settings.extra_class }} ">
+<div class="ctm_multifaq_title_main {{ section.settings.extra_class }} ">
     <div class="ctm_multifaq_title_inner">
         <div class="faq_main_container">
           {%- if section.settings.main_title != blank -%}
-              <div id="faq_subheading{{ forloop.index0 }}" class="faq_subheading ctm_{{ section.settings.main_title | handle }} pb-10 lg:pb-20">
+              <div id="faq_subheading{{ forloop.index0 }}" class="faq_subheading ctm_{{ section.settings.main_title | handle }}">
                   <h2>{{ section.settings.main_title }}</h2>
               </div>
           {%- endif -%}
             {%- for block in section.blocks -%}
                 {% if block.settings.faq_question != blank %}
                 <div class="faq_container faq_container{{ forloop.index0 }}">
-                    <div class="faq_question flex items-center justify-between border-b-2 border-solid border-light_black py-10 pr-[23px] {% if forloop.first and section.settings.first_accordion_open %}open{% endif %}">
-                        <div class="faq_question-text pr-10">
-                            <h5 class="font-normal uppercase mdscreen1:text-18 mdscreen1:leading-26">{{ block.settings.faq_question }}</h5>
+                    <div class="faq_question {% if forloop.first and section.settings.first_accordion_open %}open{% endif %}">
+                        <div class="faq_question-text">
+                            <h5>{{ block.settings.faq_question }}</h5>
                         </div>
                         <div class="icon">
                             <div class="icon-shape">
@@ -35,8 +35,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="answercont max-h-0 overflow-hidden transition-all duration-300 ease-in-out" {% if forloop.first and section.settings.first_accordion_open %}style="display: block;"{% endif %}>
-                        <div class="answer p-20">
+                    <div class="answercont" {% if forloop.first and section.settings.first_accordion_open %}style="display: block;"{% endif %}>
+                        <div class="answer">
                             {{ block.settings.faq_answer }}
                         </div>
                     </div>
@@ -57,7 +57,7 @@
 
 {% schema %}
 {
-  "name": "custom FAQ",
+  "name": "FAQ with css",
   "tag": "section",
   "class": "ctm_faqblock_main",
   "settings": [
@@ -98,7 +98,7 @@
   ],
   "presets": [
     {
-      "name": "custom FAQ"
+      "name": "FAQ with css"
     }
   ]
 }

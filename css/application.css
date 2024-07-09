@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1,h2,h3,h4,h5,h6,p {
+    @apply m-0;
+  }
+  .container-fluid {
+    @apply px-100 small_desktop:px-60 lgscreen:px-20;
+  }
+  .container {
+    @apply px-80 small_desktop:px-40 lgscreen:px-20 max-w-full;
+  }
+}
+@layer components {}
+@layer utilities {
+
+  /* zigzag css start */
+  /* .zig-zag-section {
+    @apply 
+  } */
+  .zig-zag-section .zigzag-button a {
+    @apply no-underline bg-black border-1 border-black text-white p-[15px] rounded-10 inline-block hover:bg-[transparent] hover:text-black;
+  }
+  .zig-zag-section .img-zig-zag img {
+    @apply w-full h-full object-cover;
+  }
+  .zig-zag-section h2 {
+    @apply text-40 small_desktop1:text-30;
+  }
+  .zig-zag-section p,.zig-zag-section .zigzag-button a  {
+    @apply text-18 leading-28 lgscreen:text-16 lgscreen:leading-26 m-0;
+  }
+  .zig-zag-section .zigzag-left {
+    @apply lgscreen:order-1;
+  }
+  .zig-zag-section .zigzag-right {
+    @apply lgscreen:order-2;
+  }
+  /* zigzag css end */
+
+}

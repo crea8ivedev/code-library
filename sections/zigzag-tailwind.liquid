@@ -1,0 +1,140 @@
+<div class="zig-zag-section py-80 lgscreen:py-40 lgscreen:gap-20 flex flex-col">
+  <div class="heading-main">
+    {% if section.settings.heading != blank %}
+      <h1>{{ section.settings.heading }}</h1>
+    {% endif %}
+  </div>
+{% for block in section.blocks %}
+ <div class="zig-zag-content">
+    <div class="container-fluid">
+	  <div class="zigzag-inner flex flex-wrap items-center py-20 lgscreen:py-0 lgscreen:gap-30">
+      {% capture image_layout %}
+            <div class="zigzag-left w-full lg:w-1/2 zigzag_img{{ forloop.index }}">
+                <div class="img-zig-zag">
+                    {%- if block.settings.image != blank -%}
+                        <img src="{{ block.settings.image | img_url:'master' }}" alt="img-zigzag" width="auto" height="auto">
+                    {%- endif -%}
+                </div>
+            </div>
+      {% endcapture %}
+
+      {% if block.settings.layout == 'left' %}
+          {{ image_layout }}
+      {% endif %}
+
+      <div class="zigzag-right w-full lg:w-1/2 zigzag_{{ forloop.index }}">
+        <div class="zigzag-right_content max-w-full m-auto px-50 small_desktop1:px-20 lgscreen:px-0" style="text-align: {{ block.settings.alignment }};">
+          <div class="zigzag-title">
+            {% if block.settings.heading != blank %}
+              <h2 class="abt-title">{{ block.settings.heading }}</h2>
+            {% endif %}
+          </div>
+          <div class="zigzag-content text-global mt-30 mdscreen:mt-20">
+            {% if block.settings.content != blank %}
+             {{ block.settings.content }}
+            {% endif %}
+          </div>
+          <div class="zigzag-button mt-30 mdscreen:mt-20">
+            {% if block.settings.button-text != blank %}
+             <a href="{{ block.settings.link }}">{{ block.settings.button-text }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if block.settings.layout == 'right' %}
+          {{ image_layout }}
+      {% endif %}
+      </div>
+    </div>
+ </div>
+{% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Zig Zag Tailwind",
+	"class":"zig-zag-wrapper",
+    "settings": [
+		  {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+		  }
+	],
+	"blocks": [
+      {
+        "type": "zig-zag",
+        "name": "zig-zag",
+        "settings": [
+		  {
+            "type": "select",
+            "id": "layout",
+            "label":"Image alignment",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label":"Left"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "alignment",
+            "label":"Text alignment",
+            "default": "center",
+            "options": [
+              {
+                "value": "left",
+                "label":"Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+		  },
+		  {
+			"type": "text",
+            "id": "heading",
+            "label": "Heading"
+		  },
+		  {
+			"type": "html",
+            "id": "content",
+            "label": "Content"
+		  },
+		  {
+			"type": "text",
+            "id": "button-text",
+            "label": "Button Text"
+		  },
+		  {
+			"type": "url",
+            "id": "link",
+            "label": "Button URL"
+		  }
+        ]
+      }
+	],
+      "presets": [
+        {
+          "name": "Zig Zag Tailwind"
+        }
+      ]
+  }
+{% endschema %}

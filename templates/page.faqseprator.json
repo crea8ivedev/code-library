@@ -35,7 +35,6 @@
         "faq_block_bDPDrF": {
           "type": "faq_block",
           "settings": {
-            "main_title": "POUND CAKE <span> FAQ<\/span>",
             "faq_question": "HOW ARE POUND CAKE PRODUCTS DIFFERENT FROM OTHER BEAUTY BRANDS?",
             "faq_answer": "<p>First off, all of our formulas are entirely custom. From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom. We’re the first brand to create products for people of various skin AND lip tones. Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/p>"
           }
@@ -43,7 +42,6 @@
         "faq_block_4VACzP": {
           "type": "faq_block",
           "settings": {
-            "main_title": "",
             "faq_question": "WHEN IS THE NEXT PRODUCT LAUNCHING?",
             "faq_answer": "<p>First off, all of our formulas are entirely custom. From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom. We’re the first brand to create products for people of various skin AND lip tones. Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/p>"
           }
@@ -51,7 +49,6 @@
         "faq_block_YdnzLC": {
           "type": "faq_block",
           "settings": {
-            "main_title": "",
             "faq_question": "WHAT DOES IT MEAN YOU'RE \"RACISM-FREE\"?",
             "faq_answer": "<p>First off, all of our formulas are entirely custom. From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom. We’re the first brand to create products for people of various skin AND lip tones. Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/p>"
           }
@@ -59,7 +56,6 @@
         "faq_block_9TaC4V": {
           "type": "faq_block",
           "settings": {
-            "main_title": "",
             "faq_question": "WHERE CAN I FIND YOUR CURRENT PROMOTIONS?",
             "faq_answer": "<ul>\n<li>First off, all of our formulas are entirely custom. <\/li>\n<li>From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom.<\/li>\n<li> We’re the first brand to create products for people of various skin AND lip tones. <\/li>\n<li>Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/li>\n<\/ul>"
           }
@@ -67,7 +63,6 @@
         "faq_block_qbgQtW": {
           "type": "faq_block",
           "settings": {
-            "main_title": "",
             "faq_question": "I HAVE A WEIRD QUESTION AND I WANT TO TALK TO A PERSON ABOUT IT.",
             "faq_answer": "<p>First off, all of our formulas are entirely custom. From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom. We’re the first brand to create products for people of various skin AND lip tones. Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/p>"
           }
@@ -81,6 +76,7 @@
         "faq_block_qbgQtW"
       ],
       "settings": {
+        "main_title": "POUND CAKE <span> FAQ<\/span>",
         "extra_class": "ctm_poundfaq",
         "first_accordion_open": true
       }
@@ -91,7 +87,6 @@
         "faq_block_FX9xUn": {
           "type": "faq_block",
           "settings": {
-            "main_title": "PRODUCT",
             "faq_question": "ARE YOUR PRODUCTS VEGAN? PARABEN-FREE? CRUELTY-FREE?",
             "faq_answer": "<p>Yes, yes, and yes! Our line is 100% vegan, baby!<\/p>\n<p>Parabens are a ‘hell no’ for us. We use the best possible ingredients in our products, including vegan flavoring and natural oils, and thoughtful formulation with minimal to no preservatives.<\/p>\n<p>All of our products are cruelty-free! We do <strong>not<\/strong> test our products or ingredients on animals. We wouldn’t dare test any of our products on our furry friends and we are not affiliated with any other beauty company or suppliers that test on animals. We’re officially Leaping Bunny Certified. You can find our certification <a class=\"black_text\" href=\"#\">here<\/a> 🐰<\/p>"
           }
@@ -99,7 +94,6 @@
         "faq_block_cyPJtP": {
           "type": "faq_block",
           "settings": {
-            "main_title": "",
             "faq_question": "WHAT IS THE POUND CAKE LIP TEST?",
             "faq_answer": "<p>Yes, yes, and yes! Our line is 100% vegan, baby!<\/p>\n<p>Parabens are a ‘hell no’ for us. We use the best possible ingredients in our products, including vegan flavoring and natural oils, and thoughtful formulation with minimal to no preservatives.<\/p>\n<p>All of our products are cruelty-free! We do <strong>not<\/strong> test our products or ingredients on animals. We wouldn’t dare test any of our products on our furry friends and we are not affiliated with any other beauty company or suppliers that test on animals. We’re officially Leaping Bunny Certified. You can find our certification <a class=\"black_text\" href=\"#\">here<\/a> 🐰<\/p>"
           }
@@ -107,7 +101,6 @@
         "faq_block_3bkL8n": {
           "type": "faq_block",
           "settings": {
-            "main_title": "",
             "faq_question": "HOW DO YOU SUGGEST APPLYING YOUR PRODUCTS?",
             "faq_answer": "<p>We suggest using our lip products without lip balm as a base for all of our products. Our team worked on these formulas for <strong>years<\/strong> to ensure our products included the perfect amount of restoring ingredients  to keep your skin moisturized throughout the day. Please note that because our Cake Batter is filled with moisturizing agents, the product will not dry down all of the way, as it's a creme-matte formula!<\/p>\n<p>Don’t have a liner to apply our Cake Batter? No worries! We picked a specific doe-foot applicator to make sure our customers, regardless of lip size, could easily get in the corners and line their lips for the perfect pout!<\/p>"
           }
@@ -115,7 +108,6 @@
         "faq_block_KVfTbh": {
           "type": "faq_block",
           "settings": {
-            "main_title": "",
             "faq_question": "HOW DO I KNOW WHAT SHADE IS RIGHT FOR ME?",
             "faq_answer": "<p>We suggest using our lip products without lip balm as a base for all of our products. Our team worked on these formulas for <strong>years<\/strong> to ensure our products included the perfect amount of restoring ingredients  to keep your skin moisturized throughout the day. Please note that because our Cake Batter is filled with moisturizing agents, the product will not dry down all of the way, as it's a creme-matte formula!<\/p>\n<p>Don’t have a liner to apply our Cake Batter? No worries! We picked a specific doe-foot applicator to make sure our customers, regardless of lip size, could easily get in the corners and line their lips for the perfect pout!<\/p>"
           }
@@ -128,6 +120,7 @@
         "faq_block_KVfTbh"
       ],
       "settings": {
+        "main_title": "PRODUCT",
         "extra_class": "ctm_poundproduct_faq",
         "first_accordion_open": true
       }
