@@ -15,66 +15,9 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "ctm_faq_FaUjEG": {
-      "type": "ctm-faq",
-      "blocks": {
-        "faq_block_R4PeEw": {
-          "type": "faq_block",
-          "settings": {
-            "main_title": "POUND CAKE <span> FAQ<\/span>",
-            "faq_question": "HOW ARE POUND CAKE PRODUCTS DIFFERENT FROM OTHER BEAUTY BRANDS?",
-            "faq_answer": "<p>First off, all of our formulas are entirely custom. From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom. We’re the first brand to create products for people of various skin AND lip tones. Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/p>"
-          }
-        },
-        "faq_block_qE8cqb": {
-          "type": "faq_block",
-          "settings": {
-            "main_title": "",
-            "faq_question": "WHEN IS THE NEXT PRODUCT LAUNCHING?",
-            "faq_answer": "<p>First off, all of our formulas are entirely custom. From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom. We’re the first brand to create products for people of various skin AND lip tones. Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/p>"
-          }
-        },
-        "faq_block_NRd6x7": {
-          "type": "faq_block",
-          "settings": {
-            "main_title": "",
-            "faq_question": "WHAT DOES IT MEAN YOU'RE \"RACISM-FREE\"?",
-            "faq_answer": "<p>First off, all of our formulas are entirely custom. From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom. We’re the first brand to create products for people of various skin AND lip tones. Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/p>"
-          }
-        },
-        "faq_block_3dm7wq": {
-          "type": "faq_block",
-          "settings": {
-            "main_title": "",
-            "faq_question": "WHERE CAN I FIND YOUR CURRENT PROMOTIONS?",
-            "faq_answer": "<ul>\n<li>First off, all of our formulas are entirely custom. <\/li>\n<li>From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom.<\/li>\n<li> We’re the first brand to create products for people of various skin AND lip tones. <\/li>\n<li>Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/li>\n<\/ul>"
-          }
-        },
-        "faq_block_pzF374": {
-          "type": "faq_block",
-          "settings": {
-            "main_title": "",
-            "faq_question": "I HAVE A WEIRD QUESTION AND I WANT TO TALK TO A PERSON ABOUT IT.",
-            "faq_answer": "<p>First off, all of our formulas are entirely custom. From the ingredient list, the unique Cake Batter smell you like, that’s ALL custom. We’re the first brand to create products for people of various skin AND lip tones. Your lip tone can affect the way a lipstick\/product shows up, and Pound Cake knows this and addresses this by offering slight variations of one color for different skin and lip categories. <\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_block_R4PeEw",
-        "faq_block_qE8cqb",
-        "faq_block_NRd6x7",
-        "faq_block_3dm7wq",
-        "faq_block_pzF374"
-      ],
-      "settings": {
-        "extra_class": "",
-        "first_accordion_open": true
-      }
     }
   },
   "order": [
-    "main",
-    "ctm_faq_FaUjEG"
+    "main"
   ]
 }
