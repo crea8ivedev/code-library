@@ -42,10 +42,47 @@
       "settings": {
         "heading": ""
       }
+    },
+    "hero_slider_8H4wDg": {
+      "type": "hero-slider",
+      "blocks": {
+        "slider_slide_z9krK4": {
+          "type": "slider_slide",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/3d-rendering-personal-care-products-fondant-pink.jpg",
+            "slider_title": "What is Lorem Ipsum?",
+            "slider_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+          }
+        },
+        "slider_slide_yeJynX": {
+          "type": "slider_slide",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/beauty-products-recipients-assortment-grey-stones.jpg",
+            "slider_title": "What is Lorem Ipsum?",
+            "slider_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+          }
+        },
+        "slider_slide_hQMz6G": {
+          "type": "slider_slide",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/3d-rendering-personal-care-products-fondant-pink.jpg",
+            "slider_title": "What is Lorem Ipsum?",
+            "slider_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          }
+        }
+      },
+      "block_order": [
+        "slider_slide_z9krK4",
+        "slider_slide_yeJynX",
+        "slider_slide_hQMz6G"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "zigzag_tailwind_r8G7an"
+    "zigzag_tailwind_r8G7an",
+    "hero_slider_8H4wDg"
   ]
 }

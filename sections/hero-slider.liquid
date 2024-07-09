@@ -1,0 +1,72 @@
+<div class="container-fluid">
+		<div class="sliderOute">
+      {% for block in section.blocks %}
+			<div class="slide">
+        <div class="slider-inner relative pt-[40%]">
+          <img src="{{ block.settings.slider_image |  img_url: 'large'}}" width="auto" height="auto" alt="{{ block.settings.slider_image }}"/>
+        </div>
+        <div class="slider-content">
+          <div class="sec_title">
+            <h2>{{ block.settings.slider_title }}</h2>
+          </div>
+          <div class="text mt-20">
+            <p>{{ block.settings.slider_text }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+		</div>
+		<div class="buttonwrapper">
+			<a href="" class="prev">Prev</a>
+			<a href="" class="next">Next</a><br/><br/>
+			<a href="" class="playBtn">Play/Pause</a>
+		</div>
+	</div>
+
+  <style>
+    *{box-sizing:border-box;}
+body{width:100%;max-width:100%;margin:0 auto;padding:0;}
+.pageWrap{width:800px;margin:0 auto;max-width:100%;text-align:center;}
+.sliderOute{width:100%;max-width:100%;overflow:hidden;position:relative;}
+.slide{visibility:hidden;opacity:0;width:100%;position:absolute;transition:all 0.5s;display:inline-block;width:100%;}
+.slide.next{left:100%;}
+.slide.prev{left:-100%;}
+.slide.active{visibility:visible;opacity:1;left:0;position:relative;} 
+  </style>
+
+  {% schema %}
+    {
+      "name": "Hero Slider",
+      "tag": "section",
+      "class": "hero-slider-wrapper",
+      "settings": [],
+      "blocks": [
+        {
+          "type": "slider_slide",
+          "name": "Slider Slide",
+          "settings": [
+            {
+              "type": "image_picker",
+              "label": "Slider Image",
+              "id": "slider_image"
+            },
+            {
+              "type": "text",
+              "label": "Title",
+              "id": "slider_title"
+            },
+            {
+              "type": "html",
+              "label": "Text",
+              "id": "slider_text"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Hero Slider"
+        }
+      ]
+    }
+    {% endschema %}
