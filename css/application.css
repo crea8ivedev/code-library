@@ -7,7 +7,7 @@
     @apply m-0;
   }
   .container-fluid {
-    @apply px-100 small_desktop:px-60 lgscreen:px-20;
+    @apply px-20 lg:px-60 small_desktop:px-100;
   }
   .container {
     @apply px-80 small_desktop:px-40 lgscreen:px-20 max-w-full;
@@ -20,6 +20,45 @@
   /* .zig-zag-section {
     @apply 
   } */
+  #shopify-section-account-popup {
+    @apply h-0;
+}
+.c-modal {
+  @apply h-[calc(100vh_-_104px)] lg:h-[calc(100vh_-_124px)] fixed bottom-0 overflow-y-auto;
+}
+.c-modal.customer-account .customer form {
+  @apply !mt-0;
+}
+.c-modal.customer-account .modal-login ul li a {
+  @apply px-20 py-10 lgscreen:!text-16 lgscreen:!leading-22;
+}
+.c-modal.customer-account .modal-login ul li a.current {
+  @apply bg-white rounded-10;
+}
+.c-modal.customer-account .customer form .field input,.customer.register input,.customer.login input {
+  @apply !bg-transparent !border-black !border-2 !border-solid !rounded-10 !px-20 !py-10 !shadow-none;
+}
+.c-modal.customer-account .customer form .field::before,.c-modal.customer-account .customer form .field::after,.customer.register .field::before,.customer.register .field::after,.customer.login .field::after,.customer.login .field::before {
+  @apply content-[none];
+}
+.c-modal.customer-account .customer form .field {
+  @apply mt-10 first-of-type:!mt-0;
+}
+.c-modal .form__message,.customer .form__message {
+  @apply shadow-none outline-none outline-offset-0;
+}
+.c-modal .form__message svg,.customer .form__message svg {
+  @apply hidden;
+}
+.c-modal input::placeholder {
+  @apply !opacity-100 text-[#0F0F1166];
+}
+.shopify-challenge__container form {
+  @apply mt-20
+}
+.shopify-challenge__container form .shopify-challenge__button.btn {
+  @apply font-body font-bold text-16 mt-20 leading-22 flex items-center justify-center w-fit transition-all duration-300 ease-in-out py-10 px-20 rounded-10 uppercase border-2 border-solid border-black bg-black text-frosting_white hover:bg-transparent hover:text-black;
+}
   .zig-zag-section .zigzag-button a {
     @apply no-underline bg-black border-1 border-black text-white p-[15px] rounded-10 inline-block hover:bg-[transparent] hover:text-black;
   }
@@ -48,10 +87,13 @@
     @apply absolute top-0 left-0 w-full h-full object-cover;
   }
   .slider-content {
-    @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center p-50 small_desktop1:p-20 bg-black bg-opacity-50 rounded-[20px];
+    @apply absolute top-50_per left-50_per translate-x-[-50%] translate-y-[-50%] text-center p-50 small_desktop1:p-20 bg-black bg-opacity-50 rounded-[20px];
   }
   .slider-content h2,.slider-content p {
     @apply text-white;
+  }
+  .hero-slider-wrapper .navigation-btns svg {
+    @apply w-[30px] h-[30px];
   }
   /* hero slider css end */
 

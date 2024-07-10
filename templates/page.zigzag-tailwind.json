@@ -77,6 +77,10 @@
         "slider_slide_hQMz6G"
       ],
       "settings": {
+        "show_pagination": true,
+        "show_navigation": true,
+        "autoplay": false,
+        "autoplay_speed": 3000
       }
     }
   },

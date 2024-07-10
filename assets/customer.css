@@ -753,3 +753,14 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
 }
+.forgot-block-area.d-none,
+.login-cta.d-none,
+.reset-password.d-none{
+  display:none
+}
+.account-tab.tab-pane,.forgot-block-area.d-none,.login-cta.d-none,.reset-password.d-none {
+  display: none
+}
+.account-tab.tab-pane.current {
+  display: block;
+}

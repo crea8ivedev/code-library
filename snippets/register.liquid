@@ -1,0 +1,267 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="customer register !max-w-full !p-0 !mt-0 !mb-0"
+>
+  <div class="forgot_pass_block">
+    <div class="reset-password d-none">
+      <p class="font-body font-semibold text-black text-16 leading-26 text-brown !m-0 border-0 text-center !pb-20">
+        {{ 'customer.recover_password.subtext' | t }}
+      </p>
+
+      {%- form 'recover_customer_password' -%}
+        {% assign recover_success = form.posted_successfully? %}
+        <div class="field focus:!shadow-none focus:!outline-0 overflow-hidden">
+          <input
+            type="email"
+            value=""
+            name="email"
+            id="RecoverEmail"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="off"
+            {% if form.errors %}
+              aria-invalid="true"
+              aria-describedby="RecoverEmail-email-error"
+              autofocus
+            {% endif %}
+            placeholder="Email Address"
+            class="!font-body !text-body !text-16 !leading-[1]"
+          >
+        </div>
+        {%- if form.errors -%}
+          <small id="RecoverEmail-email-error" class="form__message">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 13 13"
+            >
+              <circle
+                cx="6.5"
+                cy="6.50049"
+                r="5.5"
+                stroke="white"
+                stroke-width="2" />
+              <circle
+                cx="6.5"
+                cy="6.5"
+                r="5.5"
+                fill="#EB001B"
+                stroke="#EB001B"
+                stroke-width="0.7" />
+              <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white" />
+              <path
+                d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z"
+                fill="white"
+                stroke="#EB001B"
+                stroke-width="0.7">
+            </svg>
+            {{ form.errors.messages.form }}
+          </small>
+        {%- endif -%}
+
+        <button class="btn_fill !mx-auto btn_fill_black !mt-30 !mb-10">
+          {{ 'customer.login_page.submit' | t }}
+        </button>
+
+        <a
+          href="javacript:void(0);"
+          id="regi-recover-cancel"
+          class="forgot_reset-cancel text-center font-body font-semibold !text-16 leading-24 !text-brown !no-underline transition-all duration-300 hover:text-brown_100 !mx-auto !block"
+        >
+          {{ 'customer.login_page.cancel' | t }}
+        </a>
+      {%- endform -%}
+    </div>
+  </div>
+
+  <svg
+    style="display: none"
+  >
+    <symbol
+      id="icon-error"
+      viewBox="0 0 13 13">
+      <circle
+        cx="6.5"
+        cy="6.50049"
+        r="5.5"
+        stroke="white"
+        stroke-width="2" />
+      <circle
+        cx="6.5"
+        cy="6.5"
+        r="5.5"
+        fill="#EB001B"
+        stroke="#EB001B"
+        stroke-width="0.7" />
+      <path
+        d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z"
+        fill="white" />
+      <path
+        d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z"
+        fill="white"
+        stroke="#EB001B"
+        stroke-width="0.7">
+    </symbol>
+  </svg>
+
+  <div class="forgot-block-area">
+    {%- form 'create_customer', novalidate: 'novalidate' -%}
+      {%- if form.errors -%}
+        <h2
+          class="form__message"
+          tabindex="-1"
+          autofocus
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            role="presentation"
+          >
+            <use
+              href="#icon-error" />
+          </svg>
+          {{ 'templates.contact.form.error_heading' | t }}
+        </h2>
+        <ul
+          class="!p-0"
+        >
+          {%- for field in form.errors -%}
+            <li
+              class="text-16 leading-26 text-brown font-body font-semibold"
+            >
+              {%- if field == 'form' -%}
+                {{ form.errors.messages[field] }}
+              {%- else -%}
+                <a
+                  href="#RegisterForm-{{ field }}"
+                >
+                  {{ form.errors.translated_fields[field] | capitalize }}
+                  {{ form.errors.messages[field] }}
+                </a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      <div
+        class="field focus:!shadow-none focus:!outline-0 overflow-hidden"
+      >
+        <input
+          type="email"
+          name="customer[email]"
+          id="RegisterForm-email"
+          {% if form.email %}
+            value="{{ form.email }}"
+          {% endif %}
+          spellcheck="false"
+          autocapitalize="off"
+          autocomplete="off"
+          aria-required="true"
+          {% if form.errors contains 'email' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-email-error"
+          {% endif %}
+          placeholder="Email"
+          class="!font-body !text-body !text-16 !leading-[1]"
+          required
+        >
+      </div>
+      {%- if form.errors contains 'email' -%}
+        <span
+          id="RegisterForm-email-error"
+          class="form__message"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            role="presentation"
+          >
+            <use
+              href="#icon-error" />
+          </svg>
+          {{ form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email }}.
+        </span>
+      {%- endif -%}
+      <div
+        class="field focus:!shadow-none focus:!outline-0 overflow-hidden"
+      >
+        <input
+          type="password"
+          name="customer[password]"
+          id="RegisterForm-password"
+          aria-required="true"
+          {% if form.errors contains 'password' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-password-error"
+          {% endif %}
+          placeholder="Password"
+          class="!font-body !text-body !text-16 !leading-[1]"
+          required
+        >
+      </div>
+      <div
+        class="field focus:!shadow-none focus:!outline-0 overflow-hidden"
+      >
+        <input
+          type="password"
+          value=""
+          name="customer[password_confirmation]"
+          id="confirm-password"
+          {% if form.errors contains 'password' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-password-error"
+          {% endif %}
+          placeholder="Confirm Password"
+          class="!font-body !text-body !text-16 !leading-[1]"
+
+        >​
+      </div>
+      {%- if form.errors contains 'password' -%}
+        <span
+          id="RegisterForm-password-error"
+          class="form__message"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            role="presentation"
+          >
+            <use
+              href="#icon-error" />
+          </svg>
+          {{ form.errors.translated_fields.password | capitalize }}
+          {{ form.errors.messages.password }}.
+        </span>
+      {%- endif -%}
+      <div
+        class="flex flex-col justify-center items-center"
+      >
+        <button class="btn_fill !mx-auto btn_fill_black !mt-30 !mb-10">SIGN UP FOR ACCOUNT</button>
+
+        <a
+          href="javascript:void(0);"
+          id="regi_forgot_pass"
+          class="forgot-pass-btn regi_forgot_pass font-body font-semibold !text-16 leading-26 !text-pink !no-underline transition-all duration-300 hover:!text-blue !mx-auto"
+        >
+        ALREADY HAVE AN ACCOUNT? SIGN IN HERE
+        </a>
+      </div>
+
+      <p
+        class="text-center !text-20 leading-30 !font-body !font-normal text-brown pt-20 hidden"
+      >
+        Have an account?
+
+        <a
+          class="trigger_login font-body font-semibold !text-16 leading-26 !text-brown !no-underline transition-all duration-300 hover:!text-brown_100 hover:!no-underline !mx-auto"
+          href="#"
+        >
+          Login
+        </a>
+      </p>
+    {%- endform -%}
+  </div>
+</div>

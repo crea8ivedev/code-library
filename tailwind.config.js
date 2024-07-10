@@ -255,6 +255,7 @@ export default {
                 70: '70px',
                 90: '70px',
                 100: '100px',
+                "50_per": '50%',
                 "100_per": '100%',
             },
             borderWidth: {

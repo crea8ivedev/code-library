@@ -1,72 +1,139 @@
-<div class="container-fluid">
-		<div class="sliderOute">
+<div id="slider-wrapper" class="slider-wrapper relative py-40"
+     data-autoplay="{{ section.settings.autoplay }}"
+     data-autoplay-speed="{{ section.settings.autoplay_speed }}">
+  <div class="container-fluid">
+    <div class="sliderOute h-[750px] lgscreen:h-[500px]">
       {% for block in section.blocks %}
-			<div class="slide">
-        <div class="slider-inner relative pt-[40%]">
-          <img src="{{ block.settings.slider_image |  img_url: 'large'}}" width="auto" height="auto" alt="{{ block.settings.slider_image }}"/>
-        </div>
-        <div class="slider-content">
-          <div class="sec_title">
-            <h2>{{ block.settings.slider_title }}</h2>
+        <div class="slide h-full">
+          <div class="slider-inner relative pt-[42%] h-full">
+            <img src="{{ block.settings.slider_image | img_url: 'large' }}" width="auto" height="auto" alt="{{ block.settings.slider_image }}">
           </div>
-          <div class="text mt-20">
-            <p>{{ block.settings.slider_text }}</p>
+          <div class="slider-content absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center p-50 small_desktop1:p-20 bg-black bg-opacity-50 rounded-[20px] lgscreen:w-[calc(100%_-_40px)]">
+            <div class="sec_title">
+              <h2>{{ block.settings.slider_title }}</h2>
+            </div>
+            <div class="text mt-20">
+              <p>{{ block.settings.slider_text }}</p>
+            </div>
           </div>
         </div>
-      </div>
       {% endfor %}
-		</div>
-		<div class="buttonwrapper">
-			<a href="" class="prev">Prev</a>
-			<a href="" class="next">Next</a><br/><br/>
-			<a href="" class="playBtn">Play/Pause</a>
-		</div>
-	</div>
+    </div>
+    <div class="buttonwrapper">
+      {% if section.settings.show_pagination %}
+        <div class="pagination"></div>
+      {% endif %}
+      {% if section.settings.show_navigation %}
+        <div class="navigation-btns flex items-center gap-10 relative lg:absolute lg:top-50_per lg:left-50_per lg:-translate-x-[50%] lg:-translate-y-[50%] w-full justify-between px-20 mt-20 lg:mt-0">
+          <a href="#" class="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow-left w-6 h-6">
+              <path fill-rule="evenodd" d="M12.707 15.293a1 1 0 0 1-1.414 0L6.586 10.7a1 1 0 0 1 0-1.414L11.293 4.707a1 1 0 1 1 1.414 1.414L9.414 10l3.293 3.293a1 1 0 0 1 0 1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" class="next">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow-right w-6 h-6">
+              <path fill-rule="evenodd" d="M7.293 15.293a1 1 0 0 0 1.414 0l4.793-4.793a1 1 0 0 0 0-1.414L8.707 4.707a1 1 0 1 0-1.414 1.414L10.586 10l-3.293 3.293a1 1 0 0 0 0 1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
 
   <style>
     *{box-sizing:border-box;}
-body{width:100%;max-width:100%;margin:0 auto;padding:0;}
-.pageWrap{width:800px;margin:0 auto;max-width:100%;text-align:center;}
-.sliderOute{width:100%;max-width:100%;overflow:hidden;position:relative;}
-.slide{visibility:hidden;opacity:0;width:100%;position:absolute;transition:all 0.5s;display:inline-block;width:100%;}
-.slide.next{left:100%;}
-.slide.prev{left:-100%;}
-.slide.active{visibility:visible;opacity:1;left:0;position:relative;} 
+    body{width:100%;max-width:100%;margin:0 auto;padding:0;}
+    .pageWrap{width:800px;margin:0 auto;max-width:100%;text-align:center;}
+    .sliderOute{width:100%;max-width:100%;overflow:hidden;position:relative;}
+    .slide{visibility:hidden;opacity:0;width:100%;position:absolute;transition:all 0.5s;display:inline-block;width:100%;}
+    .slide.next{left:100%;}
+    .slide.prev{left:-100%;}
+    .slide.active{visibility:visible;opacity:1;left:0;position:relative;} 
+    .pagination {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .pagination .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .pagination .dot.active {
+        background-color: #717171;
+    }
   </style>
 
   {% schema %}
+  {
+    "name": "Hero Slider",
+    "tag": "section",
+    "class": "hero-slider-wrapper",
+    "settings": [
+      {
+        "type": "checkbox",
+        "label": "Show Pagination",
+        "id": "show_pagination",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Navigation",
+        "id": "show_navigation",
+        "default": true
+      },
+      {
+      "type": "checkbox",
+      "label": "Autoplay",
+      "id": "autoplay",
+      "default": false
+    },
     {
-      "name": "Hero Slider",
-      "tag": "section",
-      "class": "hero-slider-wrapper",
-      "settings": [],
-      "blocks": [
-        {
-          "type": "slider_slide",
-          "name": "Slider Slide",
-          "settings": [
-            {
-              "type": "image_picker",
-              "label": "Slider Image",
-              "id": "slider_image"
-            },
-            {
-              "type": "text",
-              "label": "Title",
-              "id": "slider_title"
-            },
-            {
-              "type": "html",
-              "label": "Text",
-              "id": "slider_text"
-            }
-          ]
-        }
-      ],
-      "presets": [
-        {
-          "name": "Hero Slider"
-        }
-      ]
+      "type": "range",
+      "label": "Autoplay Speed (ms)",
+      "id": "autoplay_speed",
+      "min": 1000,
+      "max": 5000,
+      "step": 1000,
+      "default": 3000
     }
-    {% endschema %}
+    ],
+    "blocks": [
+      {
+        "type": "slider_slide",
+        "name": "Slider Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "Slider Image",
+            "id": "slider_image"
+          },
+          {
+            "type": "text",
+            "label": "Title",
+            "id": "slider_title"
+          },
+          {
+            "type": "html",
+            "label": "Text",
+            "id": "slider_text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Slider"
+      }
+    ]
+  }
+  {% endschema %}
