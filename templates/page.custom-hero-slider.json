@@ -1,12 +1,3 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "sections": {
     "main": {
@@ -15,9 +6,59 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hero_slider_UNTdad": {
+      "type": "hero-slider",
+      "blocks": {
+        "slider_slide_p6jBFh": {
+          "type": "slider_slide",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/3d-rendering-personal-care-products-fondant-pink.jpg",
+            "slider_title": "What is Lorem Ipsum?",
+            "slider_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+          }
+        },
+        "slider_slide_LgCCDh": {
+          "type": "slider_slide",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/beauty-products-recipients-assortment-grey-stones.jpg",
+            "slider_title": "What is Lorem Ipsum?",
+            "slider_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+          }
+        },
+        "slider_slide_RqYjLf": {
+          "type": "slider_slide",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/3d-rendering-personal-care-products-fondant-pink.jpg",
+            "slider_title": "What is Lorem Ipsum?",
+            "slider_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          }
+        }
+      },
+      "block_order": [
+        "slider_slide_p6jBFh",
+        "slider_slide_LgCCDh",
+        "slider_slide_RqYjLf"
+      ],
+      "settings": {
+        "show_pagination": true,
+        "show_navigation": true,
+        "autoplay": false,
+        "autoplay_speed": 3000
+      }
+    },
+    "code_display_TrCAzT": {
+      "type": "code-display",
+      "settings": {
+        "html-code": "",
+        "css-code": "",
+        "js-code": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_slider_UNTdad",
+    "code_display_TrCAzT"
   ]
 }
