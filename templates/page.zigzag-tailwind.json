@@ -82,11 +82,20 @@
         "autoplay": false,
         "autoplay_speed": 3000
       }
+    },
+    "code_display_FRbDt4": {
+      "type": "code-display",
+      "settings": {
+        "html-code": "",
+        "css-code": "",
+        "js-code": ""
+      }
     }
   },
   "order": [
     "main",
     "zigzag_tailwind_r8G7an",
-    "hero_slider_8H4wDg"
+    "hero_slider_8H4wDg",
+    "code_display_FRbDt4"
   ]
 }

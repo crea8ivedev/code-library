@@ -320,3 +320,45 @@ $(".tab-heading ul li a").click(function () {
   $("#" + tab_idd).addClass("current");
   $("#" + tab_img).addClass("current");
 });
+
+
+//timeline slider
+var swiper = new Swiper(".timeline_slider", {
+  spaceBetween: 30,
+  mousewheel: {
+    forceToAxis: true,
+   },  
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: false,
+    draggable: true,
+  },
+  breakpoints: {
+    1440: {
+      slidesPerView: 5,
+      spaceBetween: 65,
+    },
+    1199: {
+      slidesPerView: 5,
+    },
+    1024: {
+      slidesPerView: 4.5,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    500: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 30,
+    },
+    0: {
+      slidesPerView: 1.2,
+      spaceBetween: 30,
+    },
+  },
+});

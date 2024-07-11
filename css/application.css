@@ -12,6 +12,9 @@
   .container {
     @apply px-80 small_desktop:px-40 lgscreen:px-20 max-w-full;
   }
+  .main-page-title {
+    @apply text-center !mb-0;
+  }
 }
 @layer components {}
 @layer utilities {

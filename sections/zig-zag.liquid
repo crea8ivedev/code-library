@@ -192,7 +192,14 @@
 
   .zig-zag-section .img-zig-zag img {
     height: auto;
-    width: 65%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .zig-zag-section .zigzag-inner {
+    padding-block: 20px;
+  }
+  .zig-zag-section .zigzag-inner .zigzag-content,.zig-zag-section .zigzag-inner .zigzag-button {
+    margin-top: 30px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -226,18 +233,12 @@
       margin-top: 20px;
     }
 
-    .slider_content-main {
-      left: 25%;
-    }
-
-    .slider_content-title h1 {
-      margin-bottom: 10px;
-    }
-
-    .slider_content p {
-      font-size: 18px;
-      line-height: 20px;
-    }
+    .zig-zag-section .zigzag-inner {
+    padding-block: 0px;
+  }
+  .zig-zag-section .zigzag-inner .zigzag-content,.zig-zag-section .zigzag-inner .zigzag-button {
+    margin-top: 20px;
+  }
   }
 
   @media screen and (max-width: 900px) {
@@ -264,52 +265,12 @@
       padding: 0px;
     }
 
-    .zig-zag-section .slider_content p {
-      font-size: 15px;
-      line-height: 18px;
-    }
-
     .zig-zag-section h2.abt-title {
       margin-bottom: 15px;
     }
 
     .zig-zag-section .zigzag-button {
       margin-top: 25px;
-    }
-
-    .slider_content-title h1 {
-      font-size: 30px;
-    }
-
-    .slider_content-main {
-      max-width: 350px;
-    }
-
-    .slider_content-button a {
-      font-size: 14px;
-      padding: 12px;
-    }
-
-    .slider_content p {
-      font-size: 12px;
-      line-height: 15px;
-    }
-
-    .slider_content-title h1 {
-      font-size: 26px;
-    }
-
-    .slider_content-main {
-      max-width: 285px;
-    }
-
-    .slider_content-button a {
-      font-size: 12px;
-      padding: 10px;
-    }
-
-    .slider_content-main {
-      left: 27%;
     }
   }
 
