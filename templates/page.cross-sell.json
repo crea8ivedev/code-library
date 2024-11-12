@@ -15,9 +15,41 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_RjB9HD": {
+      "type": "rich-text",
+      "blocks": {
+        "text_UJ3DML": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Create cross-sell.liquid snippet render into the main-product.liquid file </p><p>Create the product meta field with type \"Product List\"</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_UJ3DML"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "code_display_f78VYp": {
+      "type": "code-display",
+      "settings": {
+        "html-code": "",
+        "css-code": "",
+        "js-code": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_RjB9HD",
+    "code_display_f78VYp"
   ]
 }
